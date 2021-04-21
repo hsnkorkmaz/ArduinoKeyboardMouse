@@ -91,7 +91,6 @@ void loop()
 			delay(get_action(raw_data).toInt());
 		}
 
-		//KEYBOARD OPERATIONS
 		if (raw_data.indexOf("keyboardPress") > -1)
 		{
 			keyboard_press(get_action(raw_data));

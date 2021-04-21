@@ -32,6 +32,7 @@ namespace ArduinoKeyboardMouse
             this.btnTestConnection = new System.Windows.Forms.Button();
             this.lblIsConnected = new System.Windows.Forms.Label();
             this.btnCloseConnection = new System.Windows.Forms.Button();
+            this.btnSendData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTestConnection
@@ -58,7 +59,7 @@ namespace ArduinoKeyboardMouse
             // 
             // btnCloseConnection
             // 
-            this.btnCloseConnection.Location = new System.Drawing.Point(12, 63);
+            this.btnCloseConnection.Location = new System.Drawing.Point(133, 12);
             this.btnCloseConnection.Name = "btnCloseConnection";
             this.btnCloseConnection.Size = new System.Drawing.Size(113, 45);
             this.btnCloseConnection.TabIndex = 2;
@@ -66,11 +67,22 @@ namespace ArduinoKeyboardMouse
             this.btnCloseConnection.UseVisualStyleBackColor = true;
             this.btnCloseConnection.Click += new System.EventHandler(this.btnCloseConnection_Click);
             // 
+            // btnSendData
+            // 
+            this.btnSendData.Location = new System.Drawing.Point(12, 63);
+            this.btnSendData.Name = "btnSendData";
+            this.btnSendData.Size = new System.Drawing.Size(113, 47);
+            this.btnSendData.TabIndex = 3;
+            this.btnSendData.Text = "Send Data";
+            this.btnSendData.UseVisualStyleBackColor = true;
+            this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 440);
+            this.ClientSize = new System.Drawing.Size(256, 436);
+            this.Controls.Add(this.btnSendData);
             this.Controls.Add(this.btnCloseConnection);
             this.Controls.Add(this.lblIsConnected);
             this.Controls.Add(this.btnTestConnection);
@@ -87,6 +99,7 @@ namespace ArduinoKeyboardMouse
         private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Label lblIsConnected;
         private System.Windows.Forms.Button btnCloseConnection;
+        private System.Windows.Forms.Button btnSendData;
     }
 }
 

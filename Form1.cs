@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Drawing;
 using System.IO.Ports;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ArduinoKeyboardMouse
 {
     public partial class Form1 : Form
     {
-        private readonly SerialConnections _serial;
+        private readonly ArduinoOperations _serial;
         private const string ConnectedPort = "COM3";
 
         public Form1()
         {
             InitializeComponent();
             LblConnection(false);
-            _serial = new SerialConnections(new SerialPort(ConnectedPort));
+            _serial = new ArduinoOperations(new SerialPort(ConnectedPort));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,8 +25,6 @@ namespace ArduinoKeyboardMouse
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
             LblConnection(_serial.OpenConnection());
-            
-            _serial.SendData("","");
         }
 
         private void LblConnection(bool connected)
@@ -46,6 +45,14 @@ namespace ArduinoKeyboardMouse
         {
             _serial.CloseConnection();
             LblConnection(false);
+        }
+
+        private void btnSendData_Click(object sender, EventArgs e)
+        {
+            Thread.Sleep(1000);
+            _serial.MouseMoveToPosition(new Point(100, 100), 1);
+
+
         }
     }
 }
